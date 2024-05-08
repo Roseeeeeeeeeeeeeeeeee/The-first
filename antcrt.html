@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>antcrt</title>
+    <link rel="stylesheet" href="./reset.css">
+   <link rel="stylesheet" href="./antcrt.css">
+</head>
+<body>
+    <!-- 页面头部 -->
+    <header class="header"> 
+        <ul>
+            <li class="about"><a href="">关于我们</a></li>
+            <li><a href="">帮助中心</a></li>
+            <li><a href="">首页</a></li>
+        </ul>
+        <h2 class="title">hi! 请登录 ~</h2>
+        <div class="logo"><a href=""><img src="https://img1.baidu.com/it/u=1916988437,1612245383&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt=""></a>
+            </div>
+    </header>
+            
+    <!-- 电话号码登陆注册区域 -->
+    <div class="external">
+        <main class="registe_or_login">
+            <div class="Tcreat">
+                <span id="return" onclick="Return()">＜</span>&nbsp;<span class="account">创建账号</span>
+                <div class="underline"></div>
+            </div>
+
+            <form action="">
+                
+                <div class="first1">
+                    
+                    <div>
+                        <input class="number" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;请输入你的邮箱">
+                    </div>
+                    
+                </div>
+                <div class="first2"><input class="auth_code" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;请输入验证码"><div class="getauth"><a href="">获取验证码</a></div></div>
+                <div class="first3">
+                    
+                        
+                    <button disabled class="resbut" onclick="register()">
+                        <span>注册</span>
+                    </button>
+                   
+                </div>
+                
+            </form>
+        </main>
+    </div>
+       <!-- 页脚 -->
+<footer>
+    <div class="footer">
+        <div class="left1">Copyright ©2024 SOSD实验室 版权所有</div>
+        <div class="details">
+            
+            <div>地址:福建省福州市福州大学城乌龙江北大道2号</div>
+            <div>邮编:350108</div>
+            <div>传真:86-0591-22866099</div>
+        
+        </div>
+    </div>
+</footer>  
+     <script>
+        function register(){
+            alert("注册成功！")
+        }
+        function Return()
+        {
+            window.location.href="mail.html"
+        }
+        let i = 0;
+var button = document.getElementsByClassName("resbut")[0];
+var auth = document.getElementsByClassName("auth_code")[0];
+auth.oninput = function(){
+    i++;
+    if(i==6){
+        button.disabled = false;
+        button.style.background = "green"
+    }
+    else{
+        button.ariaDisabled = true;
+        button.style.background = "rgb(12, 110, 54)";
+    }
+}
+     </script>
+</body>
+</html>

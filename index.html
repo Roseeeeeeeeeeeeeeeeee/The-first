@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆注册界面</title>
+   <link rel="stylesheet" href="./reset.css">
+   <link rel="stylesheet" href="./index.css">
+   <!-- <script src="./../js/cellnumberlogin.js"></script>
+</head> -->
+<body>
+    <!-- 页面头部 -->
+    <header class="header"> 
+        <ul>
+            <li class="about"><a href="">关于我们</a></li>
+            <li><a href="">帮助中心</a></li>
+            <li><a href="">首页</a></li>
+        </ul>
+        <h2 class="title">hi! 请登录 ~</h2>
+        <div class="logo"><a href=""><img src="https://img1.baidu.com/it/u=1916988437,1612245383&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" alt=""></a>
+            </div>
+    </header>
+            
+    <!-- 电话号码登陆注册区域 -->
+    <div class="external">
+        <main class="registe_or_login">
+            <div class="login_ways">
+                <div class="cellphone" onclick="cellphone_login()">
+                    手机号码登录 / 注册
+                </div>
+                <div class="mail" onclick="mail_login()">邮箱登录</div>
+                <div class="underline"></div>
+                <div class="cleanfix"></div>
+            </div>
+            <form action="">
+                
+                <div class="first1">
+                    <div>
+                        <input class="left"list="area_code" type="text" placeholder="+86">
+                    </div>
+                    <div>
+                        <input class="number" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;手机号码">
+                    </div>
+                    
+                </div>
+                <div class="first2"><input class="auth_code" type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;验证码"><div class="getauth"><button id="get" disabled>获取验证码</button></div></div>
+                <div class="first3">
+                    
+                        <div class="remember">
+                            <input type="checkbox">记住我
+                        </div>
+                    <div class="tip">
+                        未注册的手机号码验证后将自动创建账号
+                    </div>
+                    <button disabled class="login" id="button" onclick="login()">
+                        <span>登录</span>
+                    </button>
+                   
+                </div>
+                
+            </form>
+            <datalist id="area_code">
+                <optgroup>选择国家/地区</optgroup>
+                <option value="+86">中国大陆</option>
+                <option value="+853">中国澳门</option>
+                <option value="+852">中国香港</option>
+                <option value="+886">中国台湾</option>
+                <option value="+33">法国</option>
+                <option value="+91">印度</option>
+                <option value="+1">美国</option>
+                <option value="+81">日本</option>
+                <option value="+791">阿联酋</option>
+                <option value="+353">爱尔兰</option>
+                <option value="+84">越南</option>
+                <option value="+60">马来西亚</option>
+                <option value="+1">加拿大</option>
+                <option value="+212">摩洛哥</option>
+                <option value="+82">韩国</option>
+                <option value="+66">泰国</option>
+                <option value="+44">英国</option>
+            </datalist>
+        </main>
+    </div>
+    
+<!-- 页脚 -->
+<footer>
+    <div class="footer">
+        <div class="left1">Copyright ©2024 SOSD实验室 版权所有</div>
+        <div class="details">
+            
+            <div>地址:福建省福州市福州大学城乌龙江北大道2号</div>
+            <div>邮编:350108</div>
+            <div>传真:86-0591-22866099</div>
+        
+        </div>
+    </div>
+</footer> 
+<script>
+    function login()
+{
+    alert("登录成功！");
+}
+function mail_login()
+{
+    window.location.href="mail.html"
+}
+function cellphone_login()
+{
+    window.location.href="index.html"
+}
+var button = document.getElementById("button");
+let i = 0;
+var auth = document.getElementsByClassName("auth_code")[0];
+auth.oninput = function(){
+    i++;
+    console.log(i);
+    if(i == 6 )
+    {
+        button.disabled = false;
+        button.style.backgroundColor = "green"
+    }
+    else{
+        button.disabled = true;
+        button.style.background = "rgb(12, 110, 54)";
+    }
+}
+let j = 0;
+var number =  document.getElementsByClassName("number")[0];
+var getauth = document.getElementById("get");
+number.oninput = function(){
+    j++;
+    if(j == 11)
+    {
+        // get.disabled = ;
+        get.style.backgroundColor = "green"
+        
+    }
+    else{
+        // get.ariaDisabled = false;
+        get.style.background = "rgb(12, 110, 54)";
+    }
+}
+</script>
+</body>
+</html>
